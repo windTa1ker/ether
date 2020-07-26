@@ -33,6 +33,7 @@
     <modules>
         <module>learnSpark</module>
         <module>photon</module>
+        <module>spring</module>
     </modules>
 
     <build>
