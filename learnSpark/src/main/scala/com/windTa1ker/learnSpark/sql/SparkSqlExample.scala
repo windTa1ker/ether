@@ -16,7 +16,9 @@ object SparkSqlExample extends PhotonSQL{
    */
   override def handle(spark: SparkSession): Unit = {
     import spark.implicits._
-    val df = spark.read.json("learnSpark/src/main/resources/people.json")
+    //val df = spark.read.json("learnSpark/src/main/resources/people.json") // home
+    val file = "src/main/resources/people.json"                             // comp
+    val df = spark.read.json(file)
     df.show()
     df.printSchema()
     df.select("name").show()
