@@ -17,7 +17,9 @@ object SparkWC extends PhotonCore{
    */
 
   override def handle(sc: SparkContext): Unit = {
-    val inputFile = "file:///Users/windta1ker/temp/xxx.sh"
+    // val inputFile = "file:///Users/windta1ker/temp/xxx.sh // home
+    val file = "file:///Users/windta1ker/temp/spark.txt"     // comp
+    val inputFile = file
     val input = sc.textFile(inputFile)
     val words = input.flatMap(line => line.split(" "))
     val counts = words.map(word => (word, 1)).reduceByKey({ case (x, y) => x + y })
