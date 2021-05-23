@@ -23,11 +23,22 @@ object Others {
     flag
   }
 
+  @scala.annotation.tailrec
+  def isArraySortedInSortedOrder(lst: List[Int]): Boolean = {
+    lst.size match {
+      case 0 | 1 => true
+      case 2 => lst.head < lst(1)
+      case _ => if(lst.head < lst(1)) isArraySortedInSortedOrder(lst.tail) else false
+    }
+  }
+
   def main(args: Array[String]): Unit = {
-    val arr1 = Array(1, 2, 3, 4, 5)
-    val arr2 = Array(1, 2, 7, 4, 5)
-    // println(isArraySortedAsc(arr1, 0, arr1.length-1))
-    println(isArraySortedAsc(arr2, 0, arr2.length-1))
+
+    val lst1 = List(1,2,3,4,5)
+    val lst2 = List(1,2,5,3,4)
+    println(isArraySortedInSortedOrder(lst1))
+    println(isArraySortedInSortedOrder(lst2))
+
   }
 
 }

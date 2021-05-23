@@ -1,4 +1,4 @@
-package com.windTa1ker.algorithm.backtracking
+package com.windTa1ker.algorithm.ch2.backtracking
 
 /**
  * time: 2020/7/7 9:47 上午

@@ -17,9 +17,9 @@ import scala.util.Try
 trait Source extends Serializable {
   lazy val logger: Logger = LoggerFactory.getLogger(getClass)
 
-  @(transient@getter)
+  @transient @getter
   val ssc: StreamingContext
-  @(transient@getter)
+  @transient @getter
   lazy val sparkConf: SparkConf = ssc.sparkContext.getConf
 
   val paramPrefix: String
